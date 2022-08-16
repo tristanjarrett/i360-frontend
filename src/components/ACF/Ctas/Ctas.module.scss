@@ -1,0 +1,111 @@
+@import "styles/settings/__settings";
+
+.ctas {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .btn {
+        margin-right: 15px;
+        margin-bottom: 15px;
+        font-family: inherit;
+        @include font-size(14px);
+        line-height:40px;
+        height:40px;
+        text-transform: uppercase;
+        font-weight: 500;
+        display:inline-flex;
+        vertical-align: middle;
+        justify-content: flex-start;
+        align-items: center;
+        width: auto;
+        max-width: fit-content;
+        padding: 0 1.4em;
+        border:none;
+        border-radius: $border_radius-btn;
+        cursor: pointer;
+        transition:all 0.2s ease-in-out;
+        color: white;
+        text-decoration: none;
+        @include media(">tablet") {
+            line-height:60px;
+            height:60px;
+            @include font-size(18px);
+        }
+        &__primary {
+        background-color: $color-primary;
+            &:hover {
+                background-color:$color-alt;
+            }
+        }
+        &__secondary {
+        background-color: $color-alt;
+            &:hover {
+                background-color: $color-primary;
+            }
+        }
+        .btnIcon {
+            margin-right: 10px;
+            display: flex;
+            height: 100%;
+            flex: 1 1 auto;
+            align-items: center;
+        }
+        .btnText {
+            display: block;
+            height: 100%;
+            flex: 1 1 auto;
+        }
+    }
+    .link {
+        margin-right:15px;
+        background-color: transparent;
+        text-decoration: none;
+        @include font-size(16px);
+        &.light {
+            color: #fff;
+        }
+        &.dark {
+            color: $text-color;
+        }
+        > span {
+            margin-right:15px;
+        }
+        @include media("<note") {
+            background-color:#343434;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            font-family: inherit;
+            font-size: 14px;
+            font-size: 0.875rem;
+            line-height: 40px;
+            height: 40px;
+            text-transform: uppercase;
+            font-weight: 500;
+            display: inline-flex;
+            vertical-align: middle;
+            justify-content: flex-start;
+            align-items: center;
+            width: auto;
+            max-width: -webkit-fit-content;
+            max-width: -moz-fit-content;
+            max-width: fit-content;
+            padding: 0 1.4em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            color: white;
+            text-decoration: none;
+            > span {
+                width: 30px !important;
+                height: 30px !important;
+                margin-right:10px;
+            }
+        }
+    }
+    a {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

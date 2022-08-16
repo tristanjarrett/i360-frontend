@@ -1,0 +1,7 @@
+<!-- <svg xmlns="http://www.w3.org/2000/svg" width="1920.354" height="184.917" viewBox="0 0 1920.354 184.917">
+  <path id="wave_bottom" data-name="wave bottom" d="M-4206,1124.035s550.82-105.517,980.9,0,939.454-160.141,939.454-160.141H-4206Z" transform="translate(4206 -963.894)" fill="#f5f5f5"/>
+</svg> -->
+
+<svg xmlns="http://www.w3.org/2000/svg" width="1920.354" height="80.336" viewBox="0 0 1920.354 80.336">
+  <path id="wave_bottom" data-name="wave bottom" d="M-4206,1033.467s550.82-45.841,980.9,0,939.454-69.572,939.454-69.572H-4206Z" transform="translate(4206 -963.894)" fill="#f5f5f5"/>
+</svg>

@@ -1,0 +1,191 @@
+@import "styles/settings/__settings";
+
+.slider {
+    position: relative;
+    display: flex;
+    max-width: 100%;
+    flex-direction: column;
+    justify-content:center;
+    overflow: hidden;
+    z-index:1;
+    @include media(">desktop") {
+        min-height: 80vh;
+        height:100%;
+    }
+    &__inner {
+        @include media(">desktop") {
+            min-height: 80vh;
+            height:100%;
+        }
+        .slide {
+            position: relative;
+            figure {
+                margin:0;
+                position: relative;
+                    img {
+                    max-width: 100%;
+                    height: auto;
+                    width: 100%;
+                }
+            }
+            .overlay {
+                background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(255,255,255,0.3) 100%);
+                position:absolute;
+                left:0;
+                bottom:0;
+                width: 100%;
+                height: 100%;
+                @include media(">desktop") {
+                    background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(255,255,255,0.3) 100%);
+                }
+            }
+        }
+        .inner {
+            position: relative;
+            display: flex;
+            max-width: 100%;
+            width: 100%;
+            height:100%;
+            flex-direction: column;
+            justify-content:flex-start;
+            color: #fff;
+            padding: 60px 60px 200px 30px;
+            @include media(">desktop") {
+                justify-content:center;
+                padding: 60px 60px 200px 30px;
+            }
+            .content{
+                width: 100%;
+                max-width: 1440px;
+                margin:0 auto;
+                h1 {
+                    color: #fff;
+                    @include font-size(28px);
+                    line-height: 1;
+                    font-weight: 800;
+                    margin-bottom: 40px;
+                    margin-top:0;
+                    @include media(">desktop") {
+                        @include font-size(40px);
+                    }
+                }
+                h2 {
+                    color: #fff;
+                    @include font-size(30px);
+                    letter-spacing:1px;
+                    line-height: 1;
+                    font-weight: 100;
+                    margin-bottom: 10px;
+                    margin-top:0;
+                    @include media(">desktop") {
+                        @include font-size(60px);
+                    }
+                }
+                .text {
+                    color: #fff;
+                    @include font-size(24px);
+                    line-height: 1.2;
+                    font-weight: 200;
+                    margin-bottom:40px;
+                    max-width: 400px;
+                    ul {
+                        margin-bottom:20px;
+                        li {
+                            margin:0;
+                            padding:0;
+                        }
+                    }
+                    p {
+                        margin-top:0;
+                    }
+                }
+
+                .Button {
+                    padding:0;
+                    height:auto;
+                    > a  {
+                        padding:0 30px;
+                        height:60px;
+                        line-height:60px;
+                    }
+                }
+            }
+        }
+    }
+    .slider__nav {
+        position: relative;
+        width:100%;
+        height:100%;
+        z-index: 1;
+        .arrows {
+            display:none;
+            position: absolute;
+            top: 0;
+            right:0;
+            z-index: 2;
+            background:rgba(0,0,0,0.1);
+            padding:15px 15px 30px 40px;
+            border-bottom-left-radius: 140px;
+            .arrow {
+                width: 30px;
+                height: 30px;
+                position: relative;
+                fill: #fff;
+                cursor: pointer; 
+                &__disabled {
+                    fill: rgba(255, 255, 255, 0.5);
+                }
+            }
+        }
+        .dots {
+            position: absolute;
+            top: 0;
+            right:0;
+            display: flex;
+            padding: 10px 0;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100%;
+            width: 24px;
+            padding:30px;
+            z-index: 1;
+            .dot {
+                border: none;
+                width: 20px;
+                height: 20px;
+                background-color: transparent;
+                border:2px solid white;
+                border-radius: 50%;
+                box-shadow:0 0 12px rgba(0,0,0,0.2);
+                margin: 5px 0;
+                padding: 5px;
+                cursor: pointer;
+                transition: all 0.2s ease-in-out;
+                &:focus {
+                    outline: none;
+                }
+                &.active {
+                    background: $color-alt;
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }      
+    }
+    .wave {
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom:0;
+        z-index: 2;
+        margin-bottom: -5px;
+        @include media(">380px") {
+          margin-bottom: -3px;
+        }
+        @include media(">note") {
+          margin-bottom: -1px;
+        }
+    }
+}

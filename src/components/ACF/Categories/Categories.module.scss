@@ -1,0 +1,88 @@
+@import "styles/settings/__settings";
+
+.section {
+    padding:1rem 0 0 0;
+    @include media(">note") {
+        padding: 3rem 0 0 0;
+    }
+}
+.categories {
+    .select {
+        position: relative;
+        appearance: none;
+        -webkit-appearance: none;
+        width:100%;
+        height:56px;
+        color:$text-color;
+        background:$light-grey;
+        border:none;
+        border-bottom: 3px solid $grey;
+        padding:0 20px;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: all 0.2s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        &:focus {
+            outline: none;
+            border:none;
+            border-bottom: 3px solid $grey;
+        }
+        .icon {
+            position: absolute;
+            right:10px;
+            top:15px;
+        }
+        li {
+            line-height: 56px;
+            list-style-type: none;
+            padding:0;
+            margin:0;
+            a {
+                text-decoration: none;
+                color:$text-color;
+            }
+            &.active {
+                order:-1;
+                a {
+                    color: $color-primary;
+                }
+            }
+        }
+        &.active {
+            overflow: visible;
+            height:auto;
+        }
+    }
+      
+
+    @include media(">note") {
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        .item {
+            background:$light-grey;
+            border-bottom: 3px solid $grey;
+            height:44px;
+            border-radius:8px;
+            margin-bottom:15px;
+            margin-right:15px;
+            color:$text-color;
+            line-height: 44px;
+            padding: 0 20px;
+            a {
+                text-decoration: none;
+                color:$text-color;
+            }
+            &__active {
+                background-color:$color-primary;
+                color: white;
+                border-color: $text-color;
+                a {
+                    color: white;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+@import "styles/settings/__settings";
+.section {
+  padding: 0 0 3rem 0;
+}
+.tickets {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  .ticket {
+    margin:0 0 60px 0;
+  }
+}

@@ -1,0 +1,22 @@
+@import "styles/settings/__settings";
+
+.section {
+    padding:3em 0 3em 0;
+    .content {
+        max-width: 960px;
+        margin:0 auto;
+        padding:40px 20px;
+        background-color: white;
+        box-shadow:0 0 30px rgba(0,0,0,0.1);
+        transition: all 0.2s ease-in-out;
+        @include media(">laptop") {
+            padding:40px;
+        }
+        .subCategories {
+            margin-bottom: 2em;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

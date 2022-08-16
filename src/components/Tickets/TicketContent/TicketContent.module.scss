@@ -1,0 +1,42 @@
+@import "styles/settings/__settings";
+
+.content {
+    position: relative;
+    color: $text-color;
+    @include font-size(16px);
+    line-height: 1.2;
+    font-weight: 300;
+    padding:0 15px;
+    ul {
+        padding: 0;
+        margin:0 0 20px 0;
+        li {
+            padding-bottom:15px;
+            background: url(../../../../public/assets/dot-circle.svg) no-repeat;
+            background-position: left top 0;
+            padding-left:30px;
+            list-style: none;
+            margin: 0;
+        }
+    }
+    
+    p {
+        margin-top:0;
+        width:100%;
+        display: flex;
+        flex-wrap: wrap;
+        img {
+            flex:1 1 100%;
+            max-width: 100%;
+            height: auto;
+            @include media(">=laptop") {
+                flex: 1 1 50%;
+                max-width: 50%;
+            }
+        }
+    }
+    a {
+        text-decoration: none;
+        font-weight: 500;
+    }
+}

@@ -1,0 +1,154 @@
+@import "styles/settings/__settings";
+
+.ticketBody {
+  position: relative;
+  z-index:1;
+}
+
+.ticketContent {
+  padding:0 30px;
+}
+
+.ticketSidebar{
+  position: relative;
+  display: flex;
+  align-items: flex-start; 
+  height: 100%;
+  width: 100%;
+  z-index:1;
+  .stickyBox {
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+    align-self: flex-start;
+    .ticketSidebarBox {
+      transition: all 0.2s ease-in-out;
+      background-color:white;
+      transform: translateY(-150px);
+      overflow:hidden;
+      border-radius:20px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.16);
+      @include media("<=tablet") {
+        margin-bottom: -90px;
+      }
+      &__head {
+        background-color: $grey;
+        padding:20px;
+        p {
+          @include font-size(14px);
+          font-weight: 600;
+          display:flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          align-items: center;
+          justify-content: space-between;
+          margin:0;
+          span {
+            text-align: left;
+            &:nth-child(1) {
+              flex:1 1 70%;
+            }
+            &:nth-child(2) {
+              flex:1 1 30%;
+              padding:0 5px;
+            }
+            // &:nth-child(3) {
+            //   flex:1 1 20%;
+            // }
+          }
+        }
+      }
+      &__body {
+        padding:20px;
+        transition: all 0.2s ease-in-out;
+        .ticketBtn {
+          text-align: center;
+          margin-top: 30px;
+          .bookingLink {
+              display: inline-block;
+              text-align: center;
+              background-color: $color-primary;
+              color: white;
+              text-decoration: none;
+              border-radius:50px;
+              padding:10px 15px;
+              line-height:1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.ticketFooter {
+  text-align: center;
+  padding:0 0 3rem;
+}
+
+.ticketModified {
+  color: $text-color;
+  font-style: italic;
+  margin-bottom: 30px;
+  @include font-size(14px);
+}
+
+.ticketAuthor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: $text-color;
+  font-style: italic;
+  margin-bottom: 0;
+  @include font-size(14px);
+  figure {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    overflow: hidden;
+    margin-right:15px;
+  }
+}
+
+.relatedTickets {
+  display: flex;
+  flex-direction: column;
+  h5 {
+    @include font-size(20px);
+    margin-bottom: 20px;
+    a {
+      text-decoration: none;
+      color: $color-primary;
+      &:hover {
+        color: $text-color;
+      }
+    }
+  }
+  ul {
+    list-style: none;
+    a {
+      display:block;
+      padding:10px;
+      text-decoration: none;
+      color: $color-primary;
+      &:hover {
+        color: $text-color;
+      }
+    }
+  }
+}
+
+.ticketDivider {
+  display:flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  width:100px;
+  margin:0 auto;
+  padding:3em 0;
+  span {
+    width:4px;
+    height: 4px;
+    background-color:$text-color;
+    border-radius: 100%;
+  }
+}

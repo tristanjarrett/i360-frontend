@@ -1,0 +1,13 @@
+@import "styles/settings/__settings";
+
+.layoutContainer {
+  display: block;
+  width: 100%;
+  height: inherit;
+  min-height: 100%;
+  box-sizing: border-box;
+  overflow-x:hidden;
+  @include media('>note') {
+    overflow-x:clip;
+  }
+}

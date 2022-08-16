@@ -1,0 +1,30 @@
+@import "styles/settings/__settings";
+
+.section {
+  position: relative;
+  .wrapper {
+    padding: 3rem 0;
+    &.grey {
+      background-color: $light-grey;
+    }
+    &.white {
+      background-color: white;
+    }
+    .inner {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background-color: white;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease-in-out;
+      @include media(">laptop") {
+        padding: 40px;
+      }
+      h3 {
+        font-weight: 700;
+        font-style: italic;
+        padding-left: 15px;
+      }
+    }
+  }
+}

@@ -1,0 +1,148 @@
+@import "styles/settings/__settings";
+
+.section {
+    .wrapper{
+        @include media("<note") {
+            padding:0 0 3rem 0 !important;
+        }
+        @include  media('>note', '<992px') {
+            padding:3rem 0 3rem 0 !important;
+        }
+        @include media(">992px") {
+            padding:5rem 3em 5rem 3em;
+        }
+        &.grey {
+            background-color:$light-grey;
+        }
+        &.white {
+            background-color:white;
+        }
+        .pebble_left {
+            @include media(">note") {
+                border-top-left-radius: 180%;
+                border-bottom-left-radius: 140%;
+                border-top-right-radius: 380%;
+                border-bottom-right-radius:160%;
+                max-height: 400px;
+                min-height: 400px;
+                overflow: hidden;
+                box-shadow: 0 3px 30px rgba(0,0,0,0.2);
+                > span {
+                    min-height: 400px;  
+                 }
+            }
+        }
+        .pebble_right {
+            @include media(">note") {
+                border-top-right-radius: 180%;
+                border-bottom-right-radius: 140%;
+                border-top-left-radius: 380%;
+                border-bottom-left-radius:160%;
+                max-height: 400px;
+                min-height: 400px;
+                overflow: hidden;
+                box-shadow: 0 3px 30px rgba(0,0,0,0.2);
+                 > span {
+                    min-height: 400px;  
+                 }
+            }
+        }
+        .content {
+            padding:3em 3em 0 3em;
+            @include media(">note") {
+                padding:3em 0 0 0;
+            }
+            .imageAsHeading {
+                margin-bottom: 20px;
+                max-width: 350px;
+            }
+            h2 {
+                @include font-size(30px);
+                font-weight: 900;
+                font-style: italic;
+                margin-top: -15px;
+                margin-bottom: 30px;
+                font-size: clamp(24px, 4vw, 65px);
+            }
+
+            h3 {
+                @include font-size(40px);
+                font-weight: 200;
+                text-transform: uppercase;
+                font-size: clamp(30px, 4vw, 50px);
+            }
+            .text {
+                @include media(">note") {
+                    margin-bottom: 30px;
+                }
+                p {
+                    font-size: clamp(16px, 4vw, 18px);
+                    font-weight:300;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+                ul {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    margin:0;
+                    padding:0;
+                    li {
+                        flex:1 1 100%;
+                        max-width: 100%;
+                        font-size: clamp(16px, 4vw, 18px);
+                        font-weight: normal;
+                        list-style-type: none;
+                        margin-bottom: 1rem;
+                        background: url('/assets/dot-circle.svg') no-repeat left center;
+                        padding: 0px 0 0 30px;
+                    }
+                }
+            }
+            .Button {
+                margin-top:30px;
+                padding:0 !important;
+                height:auto !important;
+                > a {
+                    display: block;
+                    height:60px;
+                    line-height:60px;
+                    padding:0 30px;
+                }
+            }
+        }
+    }
+    .wave_top {
+        display: none;
+        @include media(">laptop") {
+            display:flex;
+            align-items:flex-end;
+            overflow: hidden;
+            position: relative;
+            z-index: 3;
+            margin-top: -79px;
+            margin-bottom: -1px;
+            height: 80px;
+            > figure {
+                width:104%;
+            }
+        }
+    } 
+    .wave_bottom {
+        display: none;
+        @include media(">laptop") {
+            display:flex;
+            align-items:flex-start;
+            overflow: hidden;
+            position: relative;
+            z-index: 3;
+            margin-bottom: -79px;
+            margin-top: -1px;
+            height: 80px;
+            > figure {
+                width:104%;
+            }
+        }
+    }
+}

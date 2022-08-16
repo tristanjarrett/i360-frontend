@@ -1,0 +1,24 @@
+@import "styles/settings/__settings";
+
+.section {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+}
+
+.button {
+  min-width: 250px;
+}

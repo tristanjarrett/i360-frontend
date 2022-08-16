@@ -1,0 +1,37 @@
+@import "styles/settings/__settings";
+
+.image {
+  margin:0;
+  div {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    border: none;
+    img {
+      padding: 0;
+      border:none;
+      background-color:transparent;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  p {
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-top: 0;
+    }
+  }
+
+  figcaption {
+    color: $text-color;
+    font-size: 0.9em;
+    text-align: center;
+    font-style: italic;
+    margin-top: 1em;
+  }
+}

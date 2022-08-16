@@ -1,0 +1,104 @@
+@import "styles/settings/__settings";
+
+.section {
+    background-color: #fff;
+    position: relative;
+    padding:3rem 0;
+    @include media(">desktop") {
+        padding: 5rem 0;
+    }
+    h1 {
+        @include font-size(42px);
+        font-weight: 600;
+        text-align: center;
+    }
+    h2 {
+        @include font-size(20px);
+        font-weight: 300;
+        margin-bottom: 0;
+        text-align: center;
+    }
+    .posts {
+        padding:2rem 0 0 0;
+        @include media(">desktop") {
+            padding: 3rem 0 0 0;
+        }
+
+        .post {
+            @include media(">540px") {
+                padding:0 15px;
+            }
+        }
+    }
+    .carousel_container {
+        padding-bottom:30px;
+    }
+    .custom_dots {
+        position: absolute;
+        left: inherit;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        height: 35px;
+        width:100%;
+        margin-right:15px;
+        z-index: 1;
+        li  {
+            margin: 0 5px;
+            width: 20px;
+            height: 20px;
+            button {
+                border: none;
+                margin:0;
+                width: 20px;
+                height: 20px;
+                background-color: transparent;
+                border:2px solid white;
+                border-radius: 50%;
+                box-shadow:0 0 6px rgba(0,0,0,0.2);
+                padding: 0 5px;
+                cursor: pointer;
+                vertical-align: middle;
+                transition: all 0.2s ease-in-out;
+            }
+            &:focus {
+                outline: none;
+            }
+            &.react-multi-carousel-dot--active {
+                button {
+                    background: $color-alt;
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
+    }   
+    .customArrows {
+        .arrow_left, .arrow_right {
+            position: absolute;
+            outline: 0;
+            transition: all .5s;
+            border-radius: 100%;
+            z-index: 10;
+            border: 1px solid #DDDDDD;
+            background: white;
+            width: 100px;
+            height: 100px;
+            opacity: 1;
+            cursor: pointer;
+            top: calc(30% - 120px);
+            @include media(">desktop") {
+                top: calc(50% - 120px);
+            }
+        }
+        
+        .arrow_left {
+            left: -60px;
+        }
+        
+        .arrow_right {
+            right: -60px;
+        }
+    }
+}

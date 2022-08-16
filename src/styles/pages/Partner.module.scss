@@ -1,0 +1,35 @@
+@import "styles/settings/__settings";
+
+.section {
+  padding:3em 0 3em 0;
+}
+
+.partnerContent {
+  p {
+    @include font-size(18px);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+}
+
+.partnerImageWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.partnerDivider {
+  display:flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  width:100px;
+  margin:0 auto;
+  margin-top:40px;
+  padding:3em 0;
+  span {
+    width:4px;
+    height: 4px;
+    background-color:$text-color;
+    border-radius: 100%;
+  }
+}

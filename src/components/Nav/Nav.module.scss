@@ -1,0 +1,525 @@
+@import "styles/settings/__settings";
+
+.nav {
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  position: fixed;
+  z-index:100;
+  &.hasNotification {
+    top:60px;
+  }
+}
+
+.navSection {
+  position: relative;
+  background-color: white;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0;
+  box-shadow: 3px 0 12px rgba(0, 0, 0, 0.16);
+  height: 80px;
+  z-index:2;
+
+  @include media("≥tablet") {
+    height: 80px;
+  }
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  overflow: hidden;
+  .navLogo {
+    text-decoration: none;
+    flex:1 1 auto;
+    max-width: 150px;
+    padding: 15px 15px 15px 0;
+  }
+
+  .navToggles {
+    flex:0 1 auto;
+    margin-left:auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+
+    .navCtas {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: stretch;
+      a {
+        text-decoration: none;
+        color: $text-color;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        align-items: center;
+        padding:0 15px;
+        display:none;
+        @include media(">=laptop") {
+          display: flex;
+        }
+        span {
+          @include font-size(12px);
+          line-height: 80px;
+          display: inline-block;
+          @include media(">=note") {
+            @include font-size(14px);
+          }
+          @include media(">=laptop") {
+            @include font-size(16px);
+          }
+        }
+        .navCtaText {
+          @include media(">=note") {
+            padding-right: 10px;
+          }
+        }
+        .navCtaIcon {
+          @include media("<=note") {
+            display: none;
+          }
+          display: flex;
+          align-content: center;
+        }
+        &:nth-child(2) {
+          padding-right: 30px;
+        }
+        &:last-child {
+          @include media("<=laptop") {
+            display: flex;
+            padding:0 15px;
+          }
+          background-color:$color-primary;
+          color:white;
+          font-weight: 500;
+          text-transform: uppercase;
+          padding:0 30px;
+        }
+      }
+    }
+
+    .navToggleSearch {
+      background-color:transparent;
+      border: none;
+      box-shadow: none;
+      padding: 0 30px;
+    }
+
+    .navToogleMenu {
+      position: relative;
+      background-color: transparent;
+      border: none;
+      box-shadow: none;
+      height: 24px;
+      width: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-left: 15px;
+      span {
+        display:block;
+        background-color:$text-color;
+        transition:all 0.2s ease-in-out;
+        &.b1 {
+          width: 35px;
+          height: 2px;
+        }
+        &.b2 {
+          width: 25px;
+          height: 2px;
+        }
+        &.b3 {
+          width: 15px;
+          height: 2px;
+        }
+      }
+      &.toggleActive {
+        .b2 {
+          width: 0;
+        }
+        .b1 {
+          transform: rotate(-45deg) translateY(-50%);
+          top: 50%;
+          position: absolute;
+        }
+        .b3 {
+          width: 35px;
+          transform: rotate(45deg) translateY(-50%);
+          top: 50%;
+          position: absolute;
+        }
+      }
+    }
+  }
+}
+
+.navSearch {
+  width: 100%;
+  height: 75px;
+  flex-grow: 1;
+  margin:0;
+  background-color: white;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.16);
+  @include media("≥tablet") {
+    height: 100px;
+  }
+  form {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 1em;
+  }
+
+  input {
+    display: block;
+    width: 100%;
+    font-weight: 200;
+    font-style: italic;
+    @include font-size(18px);
+    line-height: 1;
+    outline: none;
+    border:none;
+    border-left: 2px solid #CBCBCB;
+    @include media("≥tablet") {
+      @include font-size(24px);
+    }
+  }
+
+  button {
+    font-size: 1.2em;
+    background: none;
+    padding: 1.045em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    &[disabled] {
+      svg {
+        fill: $grey;
+        transition: fill 0.5s;
+      }
+    }
+
+    svg {
+      fill: $text-color;
+      transform: translateY(2px);
+    }
+
+    &:focus {
+      svg {
+        fill: $color-primary;
+      }
+    }
+  }
+}
+
+.navSearchResults {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100vw;
+  background-color: white;
+  padding: 1.5em;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  border-top: solid 5px $color-primary;
+  margin-right: -1rem;
+  z-index: 999;
+
+  @media (min-width: 480px) {
+    width: 30em;
+    margin-right: 0;
+  }
+
+  [data-search-is-active="true"] & {
+    display: block;
+  }
+
+  p {
+    line-height: 1.15;
+    margin: 0;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: -0.5em 0;
+  }
+
+  a {
+    display: block;
+    color: $text-color;
+    text-decoration: none;
+    padding: 0.5em;
+    margin: 0 -0.5em;
+    &:focus {
+      outline: 2px solid $grey;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+}
+
+.navWrapper {
+  visibility: hidden;
+  position: fixed;
+  transform: translateY(-100vh);
+  background-color:$nav;
+  width:100%;
+  height: 100vh;
+  opacity: 0;
+  transition: all 0.5s ease-in-out; 
+  z-index: 1;
+  overflow-y: scroll;
+  @include media(">=tablet") {
+    height: calc(100vh - 80px);
+    overflow-y: visible;
+  }
+  &.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    top:80px;
+  }
+  .navInner {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: flex-start;
+    padding:20px 0 80px 0;
+    @include media(">=tablet") {
+      height: calc(100vh - 80px);
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .navMenuCtas {
+      flex:0 1 auto;
+      max-width: 100%;
+      width: 100%;
+      display: flex;
+      justify-content:flex-start;
+      align-items: center;
+      flex-direction: column;
+      padding: 30px 30px 30px 30px;
+      @include media(">=tablet") {
+        flex:1 1 50%;
+        max-width: 50%;
+        width:50%;
+        justify-content:center;
+        padding: 3rem;
+        flex-direction: column-reverse;
+      }
+      a {
+        text-decoration: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        color:white;
+        font-weight: 500;
+        text-transform: uppercase;
+        padding:0 0 20px 0;
+        @include media(">=tablet") {
+          padding: 30px 0 30px  0;
+          max-width: 60%;
+          justify-content: flex-start;
+        }
+        span {
+          @include font-size(16px);
+          display: inline-block;
+          text-transform: uppercase;
+          @include media(">=tablet") {
+            @include font-size(18px);
+          }
+        }
+        .navMenuCtaText {
+          padding-right: 15px;
+        }
+        &:first-child {
+          order:3;
+          background-color:$color-primary;
+          padding:10px 15px;
+          display:flex;
+          justify-content: space-between;
+          @include media(">=tablet") {
+            order:1;
+            padding:20px 30px;
+            justify-content: flex-start;
+          }
+          .navMenuCtaIcon {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+    .navMenu {
+      flex:1 1 100%;
+      width:100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      transition: all 0.3s ease-in;
+      @include media(">=tablet") {
+        justify-content: center;
+        padding: 3rem 3rem 3rem 0;
+        flex:1 1 50%;
+        max-width: 50%;
+        margin: 0;
+      }
+      li {
+        display:flex;
+        flex-wrap: wrap;
+        position: relative;
+        margin: 0;
+        width:100%;
+        transition: all 0.3s ease-in;
+        @include media(">=tablet") {
+          display: flex;
+          flex-wrap: nowrap;
+          justify-content: flex-start;
+          z-index: 1;
+        }
+        > a {
+          flex:0 1 90%;
+          max-width:90%;
+          display: block;
+          text-decoration: none;
+          color: white;
+          @include font-size(16px);
+          font-weight: 300;
+          text-transform: uppercase;
+          padding: 0.5em 30px;
+          @include media("≥tablet") {
+            display:flex;
+            justify-content: flex-start;
+            align-items:center;
+            flex:1 1 100%;
+            max-width: 100%;
+            @include font-size(24px);
+            font-weight: 200;
+            padding: 0.5em 0 0.5em 3rem;
+          }
+    
+          @media (hover: hover) {
+            &:hover {
+              color: $color-primary;
+            }
+          }
+        }
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &:hover {
+          & > a {
+            color: $color-primary;
+          }
+          > .navSubMenu {
+            @include media("≥tablet") {
+              visibility: visible;
+              display: flex;
+              left:0;
+              opacity:1;
+              width: calc(50% + 3rem);
+            }
+          }
+        }
+
+        button {
+          flex:0 1 10%;
+          max-width: 10%;
+          border:none;
+          background: none;
+          color: #fff;
+          padding:0;
+          max-height: 45px;
+          text-align: center;
+          transition: all 0.2s ease-in-out;
+          @include media("≥tablet") {
+            display: none;
+          }
+          > div {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          &[aria-expanded="true"] {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+    .navSubMenu {
+      position: relative;
+      z-index: -10;
+      visibility:hidden;
+      opacity: 0;
+      max-height:0;
+      height:auto;
+      flex:1 1 100%;
+      display: flex;
+      white-space: nowrap;
+      list-style: none;
+      background-color: #fff;
+      padding:0;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      width: 100%;
+      transition: all 0.3s ease-in;
+      @include media(">=tablet") {
+        position: fixed;
+        width: 0;
+        height: 100%;
+        max-height: 100%;
+        top: 0;
+        left:-3000px;
+        padding: 3rem 0;
+        margin:0;
+        border-right: 3rem solid $nav;
+        border-left: 3rem solid white;
+        transition: all 0.3s ease-in-out;
+      }
+      li {
+        background-color: white;
+        margin: 0;
+
+        a {
+          color: $text-color;
+          text-decoration: none;
+          @include font-size(16px);
+          font-weight: 400;
+          text-transform: capitalize;
+          padding: 0.5em 15px 0.5em 45px;
+          @include media("≥tablet") {
+            @include font-size(24px);
+            padding: 0.5em 0;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+  }
+}

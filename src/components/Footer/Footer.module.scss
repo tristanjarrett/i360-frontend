@@ -1,0 +1,149 @@
+@import "styles/settings/__settings";
+
+.footer {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  margin-top:0;
+  z-index:4;
+}
+
+.wave {
+  z-index: 2;
+  margin-bottom: -5px;
+  @include media(">note") {
+    margin-bottom: -1px;
+  }
+}
+
+.footerInner {
+  background-color: $light-grey;
+  padding:5rem 0 0 0;
+  h4 {
+    @include font-size(20px);
+    line-height: 1;
+    margin-bottom: 30px;
+    .headingCta {
+      display:inline-block;
+      margin-right:10px;
+    }
+  }
+}
+
+.footerCta {
+  border:2px solid $grey;
+  background-color:white;
+  color: $text-color;
+  padding:15px 30px;
+  width:100%;
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: flex-start;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 600;
+  @include media(">note") {
+    max-width: 250px;
+  }
+  .footerCtaIcon {
+    margin-right: 10px;
+  }
+  &:hover {
+    color:$color-primary;
+    text-decoration: none;
+  }
+}
+
+.footerCompay {
+  p {
+    font-weight: 400;
+  }
+  a {
+    text-decoration: none;;
+  }
+}
+
+.footerOmnisend {
+  margin-bottom: 30px;
+}
+
+.footerApp {
+  > a {
+    display: block;
+    margin-bottom: 10px;
+    > span {
+      max-width: 180px;
+      height:auto;
+    }
+  }
+}
+
+.footerLogo {
+  display: block;
+  max-width: 150px;
+  margin-bottom:15px;
+  img {
+    mix-blend-mode:darken;
+  }
+}
+
+.footerDivider {
+  background-color: $light-grey;
+  border-top:2px solid #EDEDED;
+}
+
+.quickLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  a {
+    flex:0 0 100%;
+    display: block;
+    color:$text-color;
+    @include font-size(16px);
+    width:100%;
+    text-decoration: none;
+    margin-bottom: 15px;
+    font-weight:300;
+  }
+}
+
+.footerLegal {
+  color: $text-color;
+  background-color: $light-grey;
+  padding: 0 0 5rem 0;
+  margin: 0;
+
+  p {
+    font-size: 0.9em;
+    text-align: center;
+    margin: 0;
+  }
+}
+
+.bottomFooterLinks {
+
+  text-align: center;
+  @include media(">tablet") {
+    text-align: right;
+  }
+  a {
+    display:inline-block;
+    font-weight: 400;
+    @include font-size(14px);
+    text-decoration: none;
+    color: $text-color;
+    margin-bottom: 15px;
+    &::after {
+      content: '|';
+      padding:0 10px;
+    }
+    &:last-child {
+      &::after {
+        content: '';
+        padding:0;
+      }
+    }
+  }
+}

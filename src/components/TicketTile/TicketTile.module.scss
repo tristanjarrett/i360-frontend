@@ -1,0 +1,148 @@
+@import "styles/settings/__settings";
+
+.ticketCard {
+  position: relative;
+  color: inherit;
+  text-align: left;
+  text-decoration: none;
+  .ticketImage {
+    position: relative;
+    .ticketImageWrap {
+      position: relative;
+      width:100%;
+      height: 250px;
+      figure {
+        position: relative;
+        width:100%;
+        height: 250px;
+        div {
+          position: relative;
+          width:100%;
+          height: 250px;
+          img {
+            object-fit: fill;
+            height: inherit;
+          }
+        }
+      }
+    }
+  }
+  .ticketInner {
+    display:flex;
+    flex-direction: column;
+    padding:30px 30px 0 30px;
+    & > a {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+    .ticketContentWrapper {
+      display:flex;
+      flex-direction: column;
+      background-color: #fff;
+      padding:20px;
+      margin-bottom: 30px;
+      transform: translateY(-60px);
+      margin-bottom: -30px;
+      @include media(">998px") {
+        min-height: 305px;
+      }
+      a {
+        text-decoration: none;
+      }
+      .ticketTop {
+        margin-bottom:20px;
+        .ticketCardTitle {
+          margin: 0 0 1em 0;
+          @include font-size(18px);
+          color: $text-color;
+        }
+
+        .ticketNextEvent {
+          @include font-size(14px);
+          margin-bottom:5px;
+        }
+        .ticketDate {
+          @include font-size(14px);
+          margin-bottom:5px;
+          > span {
+            color: $color-primary;
+          }
+          &:last-of-type {
+            margin-bottom: 20px;
+          }
+        }
+      
+        .ticketCardContent {
+          margin: 0;
+          p {
+            @include font-size(14px);
+            &:first-child {
+              margin-top: 0;
+            }
+      
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+    .ticketBottom {
+      display:flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      .ticketPrice {
+        color: $text-color;
+        margin-bottom:15px;
+        flex:1 1 100%;
+        max-width: 100%;
+        @include media(">=420px") {
+          flex:0 1 calc(100% - 130px);
+          max-width: calc(100% - 130px);
+          padding-right: 15px;
+        }
+        p {
+          @include font-size(16px);
+          margin:0;
+          color: $text-color;
+          span {
+            font-weight: 300;
+          }
+          strong {
+            font-weight: 600;
+          }
+        }
+      }
+      .ticketCardLink {
+        flex:1 1 100%;
+        max-width: 100%;
+        @include media(">=420px") {
+          flex:0 1 130px;
+          max-width: 130px;
+        }
+        button {
+          @include media("<=420px") {
+            display: block;
+            min-width: 100%;
+            width: 100%;
+            order: 2;
+          }
+          height:40px;
+          border:none;
+          padding:0;
+          @include font-size(16px);
+          a {
+            display: block;
+            width: 100%;
+            text-transform: capitalize;
+            @include font-size(16px);
+            min-width: 130px;
+          }
+        }
+      }
+    }
+  }
+}

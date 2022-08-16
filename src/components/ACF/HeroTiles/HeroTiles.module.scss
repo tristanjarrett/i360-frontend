@@ -1,0 +1,162 @@
+@import "styles/settings/__settings";
+
+.tiles {
+    background-color:transparent;
+    position:relative;
+    z-index: 10;
+    @include media(">note") {
+        height: calc(100% - 150px);
+    }
+    .section {
+        padding:1rem;
+        background-color: $light-grey;
+        @include media(">note") {
+            padding:0 3% 3% 3%;
+        }
+        @include media(">desktop") {
+            padding:0 0 3% 0;
+        }
+        .container {
+            @include media(">note") {
+                height: calc(100% - 150px);
+            }
+            .inner {
+                @include media(">note") {
+                    transform: translateY(-150px);
+                }
+                .items, .itemsLg {
+                    position: relative;
+                    z-index:2;
+                    display:flex;
+                    flex-direction: column;
+                    max-width:100%;
+                    flex:1 1 100%;
+                    width:100%;
+                    @include media(">note") {
+                        margin-bottom: -150px;
+                    }
+                    @include media(">desktop") {
+                        flex-direction: row;
+                    }
+                    @include media(">wide") {
+                        width:85%;
+                        margin-left: auto;
+                    }
+                    .tile {
+                        position: relative;
+                        flex:1 1 100%;
+                        background-color: white;
+                        padding:20px;
+                        width:100%;
+                        border-bottom: 3px solid $light-grey;
+                        @include media(">desktop") {
+                            padding:30px;
+                            flex:1 1 auto;
+                            border-right: 1.5px solid $light-grey;
+                            border-left: 1.5px solid $light-grey;
+                            border-bottom: none;
+                        }
+                        &:first-child {
+                            border-left: none;
+                        }
+                        &:last-child {
+                            border-right: none;
+                        }
+
+                        &.mobileOnlyTile {
+                            padding:0;
+                            border:none;
+                            @include media(">desktop") {
+                                display:none;
+                            }
+                            a {
+                                position: relative;
+                                flex:1 1 100%;
+                                background-color: white;
+                                padding:20px;
+                                width:100%;
+                                border-bottom: 3px solid $light-grey;
+                                display:flex;
+                                flex-direction: row;
+                                flex-wrap: nowrap;
+                                justify-content: flex-start;
+                                align-items: center;
+                                width:100%;
+                                cursor:pointer;
+                                text-decoration: none;
+                                color: $text-color;
+                                margin-bottom: 0;
+                                font-weight: bold;
+                                @include font-size(16px);
+                                .icon {
+                                    margin-right:15px;
+                                }
+                                .chevron {
+                                    margin-left:auto;
+                                }
+                            }
+                        }
+                        
+                        .masterlink {
+                            display:flex;
+                            flex-direction: row;
+                            flex-wrap: nowrap;
+                            justify-content: space-between;
+                            align-items: center;
+                            width:100%;
+                            height:100%;
+                            cursor:pointer;
+                            text-decoration: none;
+                            color:$text-color;
+                            @include media(">desktop") {
+                                display:block;
+                                width:100%;
+                            }
+                        }
+                        .masterLinkUrl {
+                            @include media(">desktop") {
+                                
+                            }
+                        }
+                    }
+                }
+                .itemsLg {
+                    @include media(">wide") {
+                        width:100%;
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+    .wave {
+        display: none;
+        @include media(">laptop") {
+            display:flex;
+            align-items:flex-start;
+            overflow: hidden;
+            position: relative;
+            z-index: 3;
+            margin-bottom: -79px;
+            margin-top: -1px;
+            height: 80px;
+            > figure {
+                width:104%;
+            }
+        }
+    }
+    &.slider {
+        height: calc(100% - 150px);
+        .section {
+            .container {
+                height: calc(100% - 150px);
+                .inner {
+                    transform: translateY(-150px);
+                    .items, .itemsLg {
+                        margin-bottom: -150px;
+                    }
+                }
+            }
+        }
+    }
+}

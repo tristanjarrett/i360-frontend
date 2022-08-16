@@ -1,0 +1,146 @@
+@import "styles/settings/__settings";
+
+.postCard {
+  position: relative;
+  color: inherit;
+  text-align: left;
+  text-decoration: none;
+  border-bottom: solid 2px #e1e1e1;
+  margin-bottom: 2rem;
+  width:100%;
+  .postCardText {
+    padding: 1rem;
+    a {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+}
+
+.postCardSticky {
+  border: solid 0.02em $grey;
+  border-radius: 1em;
+
+  svg {
+    position: absolute;
+    top: 1.2em;
+    right: 1em;
+    font-size: 1.15em;
+    color: $text-color;
+  }
+}
+
+.postImage {
+  position: relative;
+}
+
+.postCardImageWrap {
+  position: relative;
+  width:100%;
+  height: 220px;
+  overflow: hidden;
+  @include media(">note") {
+    height: 240px;
+  }
+  @include media(">tablet") {
+    height: 297px;
+  }
+  figure {
+    position: relative;
+    width:100%;
+    height: 220px;
+    @include media(">note") {
+      height: 240px;
+    }
+    @include media(">tablet") {
+      height: 297px;
+    }
+    div {
+      background-color: #343434;
+      position: relative;
+      width:100%;
+      height: 220px;
+      @include media(">note") {
+        height: 240px;
+      }
+      @include media(">tablet") {
+        height: 297px;
+      }
+      img {
+        object-fit: cover;
+        height: inherit;
+      }
+    }
+  }
+  > span {
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+    transform: scale(1);
+  }
+  &:hover {
+    > span {
+      transform: scale(1.2);
+      opacity: 0.6;
+    }
+  }
+}
+
+.postCardTitle {
+  margin-bottom: 0.5rem;
+  font-size: 1.1em;
+  font-weight: bold;
+  display: block;
+  min-height: 60px;
+}
+
+.postCardContent {
+  min-height: 80px;
+  max-height: 80px;
+  overflow: hidden;
+  font-size: 1.25em;
+  margin: 0;
+  margin-bottom: 1rem;
+  p {
+    display: inline-block;
+    min-height: 80px;
+    max-height: 80px;
+    overflow: hidden;
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &:after {
+    display:inline-block;
+    position: relative;
+    content: " ...";
+  }
+  
+}
+
+.postCardMetadata {
+  @include font-size(14px);
+  margin:0;
+  padding:0;
+  align-items: center;
+  > li {
+    padding:0 0 1em 0;
+    margin:0;
+    address {
+      margin-bottom:0;
+    }
+    a {
+      @include font-size(14px);
+      font-weight: 500;
+      text-decoration: none;
+      padding:5px 10px;
+    }
+  }
+}
+

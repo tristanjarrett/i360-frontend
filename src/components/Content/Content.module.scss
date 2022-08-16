@@ -1,0 +1,122 @@
+@import "styles/settings/__settings";
+
+.content {
+  position: relative;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+  h2,
+  h3,
+  h4,
+  p,
+  ul {
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.bgImage {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  z-index:0;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.pole {
+    position: fixed;
+    right: calc(50% - 30px);
+    > span {
+      max-width: 60px;
+      height: auto;
+    }
+  @include media(">note") {
+    right:250px;
+    > span {
+      max-width: 115px;
+    }
+  }
+  @include media(">laptop") {
+    position: absolute;
+  }
+}
+.pod {
+  position: fixed;
+  left: calc(50% - 110px);
+  top: 20%;
+  width: 220px;
+  max-width: 100%;
+  > span {
+    max-width: 220px;
+  }
+  @include media(">note") {
+    left:inherit;
+    right:83px;
+    width: 450px;
+    > span {
+      max-width: 450px;
+    }
+  }
+}
+
+// .bgImage {
+//   position:absolute;
+//   top:0;
+//   left:0;
+//   right:0;
+//   z-index:0;
+//   min-height: 100vh;
+//   width: 100vw;
+//   background-position: center bottom;
+//   background-size: cover;
+// }
+
+// .pole {
+//     position: relative;
+//     background-repeat: repeat-y;
+//     background-size: 71px 100%;
+//     background-position: center right 57%;
+//   @include media(">380px") {
+//     background-position: center right 56%;
+//   }
+//   @include media(">note") {
+//     background-position: center right 54%;
+//   }
+//   @include media(">tablet") {
+//     background-position: center right 312px;
+//     background-size: 115px 100%;
+//   }
+
+//   @include media(">1919px") {
+//     background-position: center right 312px;
+//   }
+// }
+// .pod {
+//   position: fixed;
+//   left: 50%;
+//     transform: translateX(-58%);
+//     top: 20%;
+//     width: 220px;
+//     height:160px;
+//   @include media(">phone") {
+//     width: 280px;
+//     height:180px;
+//   }
+//   @include media(">tablet") {
+//     width: 450px;
+//     right: 147px;
+//     left: inherit;
+//     transform: translateX(0);
+//   }
+// }

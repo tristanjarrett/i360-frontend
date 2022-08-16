@@ -1,0 +1,30 @@
+@import "styles/settings/__settings";
+
+.button {
+  color: white;
+  font-family: inherit;
+  font-size: 18px;
+  line-height:1;
+  height:60px;
+  text-transform: uppercase;
+  font-weight: 500;
+  background-color: $color-primary;
+  display:inline-block;
+  width: auto;
+  max-width: fit-content;
+  border:2px solid white;
+  border-radius: $border_radius-btn;
+  cursor: pointer;
+  transition:all 0.2s ease-in-out;
+  > a {
+    padding: 0 1.4em;
+    text-decoration: none;
+    color:white;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &:hover {
+    background-color:$color-alt;
+  }
+}

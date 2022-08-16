@@ -1,0 +1,17 @@
+@import "styles/settings/__settings";
+
+.show {
+    visibility:visible !important;
+    max-height: 100% !important;
+    opacity: 1 !important;
+    z-index: 10 !important;
+}
+
+.icon {
+    display:none;
+    @include media(">=tablet") {
+      display: flex;
+      align-items:center;
+      margin-left:10px;
+    }
+}

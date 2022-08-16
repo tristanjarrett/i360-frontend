@@ -1,0 +1,118 @@
+@import "styles/settings/__settings";
+
+.section {
+    position:relative;
+    .wrapper {
+        position: relative;
+        @include media("<laptop") {
+            padding:3rem 0 !important;
+        }
+        @include media(">laptop") {
+            padding:5rem 3rem;
+        }
+        h2 {
+            margin-bottom: 3em;
+        }
+        .item {
+            position: relative;
+            width:100%;
+            height: 400px;
+            @include media(">laptop") {
+                height: 650px;
+            }
+            figure {
+                position: relative;
+                width:100%;
+                height: 400px;
+                @include media(">laptop") {
+                    height: 650px;
+                }
+                div {
+                    position: relative;
+                    width:100%;
+                    height: 400px;
+                    @include media(">laptop") {
+                        height: 650px;
+                    }
+                    img {
+                        object-fit: fill;
+                        height: inherit;
+                    }
+                }
+            }
+        }
+    }
+    .wave_top {
+        display: none;
+        @include media(">laptop") {
+            display:block;
+            overflow: hidden;
+            position: relative;
+            z-index: 3;
+            margin-top: -200px;
+            margin-bottom: -1px;
+            height: 200px;
+            > figure {
+                width:100%;
+            }
+        }
+    } 
+    .wave_bottom {
+        display: none;
+        @include media(">laptop") {
+            display:block;
+            overflow: hidden;
+            position: relative;
+            z-index: 3;
+            margin-bottom: -200px;
+            margin-top: -1px;
+            height: 200px;
+            > figure {
+                width:100%;
+            }
+        }
+    }
+}
+.custom_dots {
+    position: absolute;
+    top: 0;
+    right:0;
+    left: inherit;
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width:30px;
+    margin-right:15px;
+    z-index: 1;
+    li  {
+        margin:0;
+        width: auto;
+        height: auto;
+        button {
+            border: none;
+            margin:0;
+            width: 15px;
+            height: 15px;
+            background-color: transparent;
+            border:2px solid white;
+            border-radius: 50%;
+            box-shadow:0 0 12px rgba(0,0,0,0.2);
+            padding: 0;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+        &:focus {
+            outline: none;
+        }
+        &.react-multi-carousel-dot--active {
+            button {
+                background: $color-alt;
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+}   

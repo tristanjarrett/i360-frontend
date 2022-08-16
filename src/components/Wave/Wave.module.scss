@@ -1,0 +1,56 @@
+@import "styles/settings/__settings";
+
+.image {
+  margin: 0 auto;
+  width: 102%;
+  overflow: hidden;
+  div {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 102%;
+    @-moz-document url-prefix() {
+      width: 100%;
+    }
+    _::-webkit-full-page-media, _:future, :root .safari_only {
+      width: 100%;
+    }
+    img {
+      padding: 0;
+      border:none;
+      background-color:transparent;
+      width: 102%;
+      max-width: 102%;
+      @-moz-document url-prefix() {
+        width: 100%;
+        max-width: 100%;
+        object-fit: contain;
+      }
+      _::-webkit-full-page-media, _:future, :root .safari_only {
+        width: 100%;
+        max-width: 100%;
+        object-fit: contain;
+      }
+      height: auto;
+    }
+  }
+
+  p {
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-top: 0;
+    }
+  }
+
+  figcaption {
+    color: $text-color;
+    font-size: 0.9em;
+    text-align: center;
+    font-style: italic;
+    margin-top: 1em;
+  }
+}
